@@ -1,0 +1,337 @@
+html,
+body,
+#root {
+    /*min-height: 100vh;*/
+    margin: 0;
+}
+
+body {
+    background-color: #343a40;
+}
+
+nav {
+    background-color: #a52a2c;
+}
+
+main {
+
+    position: relative;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    width: 850px;
+    margin: 30px auto;
+
+    background-image: url("./images/vpet-bricks-2.png");
+    background-repeat: repeat;
+    background-size: 900px;
+
+    border-radius: 20px;
+
+    border-top: 4px solid rgba(255,255,255,.20);
+    border-left: 4px solid rgba(255,255,255,.20);
+
+    border-right: 4px solid rgba(0,0,0,.15);
+    border-bottom: 4px solid rgba(0,0,0,.15);
+
+    box-shadow:
+        inset 2px 2px 4px rgba(255,255,255,.15),
+        inset -2px -2px 4px rgba(0,0,0,.10),
+        0 10px 20px rgba(0,0,0,.35);
+}
+
+main::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 30%;
+
+    background: linear-gradient(
+        rgba(255,255,255,.12),
+        rgba(255,255,255,0)
+    );
+
+    border-radius: 12px 12px 0 0;
+
+    pointer-events: none;
+}
+
+.jail {
+
+    position: relative;
+
+    border-top: 15px solid #c0bcbc;
+    border-bottom: 15px solid #8f8b8b;
+    border-left: 45px solid #b8b4b4;
+    border-right: 25px solid #8a8787;
+
+    border-radius: 10px;
+
+    width: 500px;
+
+    background-image: url("./images/prueba.png");
+    background-repeat: repeat;
+    background-size: 100px;
+
+    box-shadow:
+        inset 4px 4px 6px rgba(255,255,255,.35),
+        inset -4px -4px 6px rgba(0,0,0,.20),
+        0 6px 12px rgba(0,0,0,.25);
+}
+
+.jail::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border-top: 2px solid rgba(255,255,255,.25);
+    border-left: 2px solid rgba(255,255,255,.25);
+
+    border-right: 2px solid rgba(0,0,0,.10);
+    border-bottom: 2px solid rgba(0,0,0,.10);
+
+    border-radius: 4px;
+
+    pointer-events: none;
+}
+
+.screen {
+
+    position: relative;
+    
+    width: 280px;
+    height: 280px;
+
+    background-image: url(./images/background.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    transform: translate(33px);
+    
+    border-radius: 10px;
+
+    /* Marco */
+    border: 4px solid #8f8f8f;
+
+    /* Efecto de pantalla hundida */
+    box-shadow:
+        inset 3px 3px 6px rgba(0, 0, 0, 0.35),
+        inset -2px -2px 4px rgba(255, 255, 255, 0.25),
+        2px 2px 4px rgba(0, 0, 0, 0.25);
+
+    overflow: hidden;
+
+    /* Visel */
+    border-top: 4px solid #666;
+    border-left: 4px solid #666;
+
+    border-right: 4px solid #d0d0d0;
+    border-bottom: 4px solid #d0d0d0;
+
+    border-radius: 10px;
+}
+
+.screen-top {
+
+    position: absolute;
+
+    top: 20px;
+    left: 8px;
+    right: 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+}
+
+.screen-icon {
+
+    width: 20px;
+    height: 20px;
+
+    image-rendering: pixelated;
+}
+
+.screen-meter {
+
+    display: flex;
+
+    gap: 2px;
+}
+
+.screen-pip {
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 2px;
+
+    background: rgba(0,0,0,.25);
+
+    border: 1px solid rgba(0,0,0,.15);
+}
+
+.screen-pip.active {
+
+    background: rgb(44, 43, 43);
+}
+
+.pet {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 120px;
+
+    image-rendering: pixelated;
+}
+
+.screen-bottom {
+
+    position: absolute;
+
+    bottom: 8px;
+
+    left: 8px;
+    right: 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+}
+
+.screen-text {
+
+    font-family: "Silkscreen", sans-serif;
+
+    font-size: 12px;
+
+    color: #364236;
+
+    text-shadow:
+        1px 1px 0 rgba(255,255,255,.15);
+
+    letter-spacing: 1px;
+}
+
+/************* ESTADISTICAS Y BOTONES *************/
+
+.stats-panel {
+
+    display: flex;
+    flex-direction: column;
+
+    transform: translate(-10px);
+    gap: 37px;
+}
+
+.stat-row {
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+}
+
+.stat-icon {
+
+    width: 55px;
+    height: 55px;
+
+   image-rendering: pixelated;
+
+    flex-shrink: 0;
+}
+
+.vpet-btn {
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #c8c8c8;
+
+    font-weight: bold;
+
+    box-shadow:
+        inset 2px 2px 2px rgba(255,255,255,.5),
+        inset -2px -2px 2px rgba(0,0,0,.25),
+        2px 2px 4px rgba(0,0,0,.25);
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+}
+
+.vpet-btn:active {
+
+    transform: translateY(2px);
+
+    box-shadow:
+        inset -2px -2px 2px rgba(255,255,255,.4),
+        inset 2px 2px 2px rgba(0,0,0,.25);
+}
+
+/* BARRAS DE PROGRESO*/
+.vpet-meter {
+
+    display: flex;
+
+    gap: 4px;
+}
+
+.pip {
+
+    width: 14px;
+    height: 14px;
+
+    border-radius: 2px;
+
+    border: 1px solid rgba(0,0,0,.25);
+
+    box-shadow:
+        inset 1px 1px 1px rgba(255,255,255,.3),
+        inset -1px -1px 1px rgba(0,0,0,.25);
+}
+
+.pip.green.active {
+    background: #49b549;
+}
+
+.pip.yellow.active {
+    background: #d8c44b;
+}
+
+.pip.red.active {
+    background: #c84c4c;
+}
+
+.pip:not(.active) {
+    background: #6f6f6f;
+}
