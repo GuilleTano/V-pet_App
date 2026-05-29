@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import sprite1 from "../public/images/sprite_1.png";
-import sprite2 from "../public/images/sprite_2.png";
+import sprite1 from "../assets/images/sprite_1.png";
+import sprite2 from "../assets/images/sprite_2.png";
 
 function Pet() {
 
