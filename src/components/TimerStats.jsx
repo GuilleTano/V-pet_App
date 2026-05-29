@@ -25,4 +25,4 @@ function TimerStats({ duration, onFinished }) {
     return null;
 }
 
-export default TimerStats;
+export default TimerStats

@@ -1,24 +1,34 @@
 import { useState, useEffect } from 'react';
-import Boton from "./components/boton.jsx";
 import Pet from "./components/Pet.jsx";
-import StatBar from './components/StateRow.jsx';
+import ActionButton from "./components/ActionButton.jsx";
+import StatBar from './components/StatBar.jsx';
 import TimerStats from './components/TimerStats.jsx';
+import StatRow from './components/StatRow.jsx';
 
 function App() {
 
-  const [hunger, setHunger] = useState(9);
+  const [hunger, setHunger] = useState(5);
   const decreaseHunger = () => {
     setHunger(prev => Math.max(prev - 1, 0)); //Math.max() Evita que baje de 0
+  }
+  const increaseHunger = () => {
+    setHunger(prev => Math.min(prev + 1, 9));
   }
 
   const [fun, setFun] = useState(9);
   const decreaseFun = () => {
-    setFun(prev => Math.max(prev - 1, 0)); //Math.max() Evita que baje de 0
+    setFun(prev => Math.max(prev - 1, 0));
+  }
+  const increaseFun = () => {
+    setFun(prev => Math.min(prev + 1, 9));
   }
 
   const [fatigue, setFatigue] = useState(9);
   const decreaseFatigue = () => {
-    setFatigue(prev => Math.max(prev - 1, 0)); //Math.max() Evita que baje de 0
+    setFatigue(prev => Math.max(prev - 1, 0));
+  }
+  const increaseFatigue = () => {
+    setFatigue(prev => Math.min(prev + 1, 9));
   }
 
   return (
@@ -56,47 +66,34 @@ function App() {
             </div>
           </div>
         </div>
+
+
         {/* ESTADISTICAS Y BOTONES */}
         <div className="col-5 ps-5 stats-panel">
-          {/* COMIDA */}
-          <div className="stat-row">
-            <img src="./src/assets/icons/meat.svg" alt="Hambre" className="stat-icon" />
-
-            
-            <TimerStats duration={10} onFinished={decreaseHunger}/>
-            <StatBar value={hunger} />
-
-            <Boton />
-
-          </div>
+          {/* HAMBRE */}
+          <StatRow
+            icon="./src/assets/icons/meat.svg"
+            value={hunger}
+            duration={15}
+            onDecrease={decreaseHunger}
+            onIncrease={increaseHunger}
+          />
           {/* ABURRIMIENTO */}
-          <div className="stat-row">
-            <img
-              src="./src/assets/icons/console-controller.svg"
-              alt="Hambre"
-              className="stat-icon"
-            />
-
-            <TimerStats duration={20} onFinished={decreaseFun}/>
-            <StatBar value={fun} />
-
-            <Boton />
-
-          </div>
-          {/* ENTRENAR */}
-          <div className="stat-row">
-            <img
-              src="./src/assets/icons/punching-bag.svg"
-              alt="Hambre"
-              className="stat-icon"
-            />
-
-            <TimerStats duration={35} onFinished={decreaseFatigue}/>
-            <StatBar value={fatigue} />
-
-            <Boton />
-            
-          </div>
+          <StatRow
+            icon="./src/assets/icons/console-controller.svg"
+            value={fun}
+            duration={5}
+            onDecrease={decreaseFun}
+            onIncrease={increaseFun}
+          />
+          {/* FATIGA */}
+          <StatRow
+            icon="./src/assets/icons/punching-bag.svg"
+            value={fatigue}
+            duration={35}
+            onDecrease={decreaseFatigue}
+            onIncrease={increaseFatigue}
+          />
         </div>
       </div>
     </div>

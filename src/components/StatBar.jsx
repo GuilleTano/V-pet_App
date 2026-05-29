@@ -23,4 +23,4 @@ function StatBar({ value }) {
     );
 }
 
-export default StatBar;
+export default StatBar
