@@ -19,7 +19,7 @@ function App() {
         icon: ""
       });
       setIsBusy(false);
-    }, 10000);
+    }, 5000);
   }
 
   const [hunger, setHunger] = useState(5);
