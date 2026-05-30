@@ -1,8 +1,8 @@
-function ActionButton({action}) {
+function ActionButton({action, disabled}) {
 
   return (
-    <button className="vpet-btn" onClick={action} actionName="Alimentando"/> // actionName se usara luego para 
-  );                                                                         // mostrar la stat en pantalla
+    <button className="vpet-btn" onClick={action}/> 
+  );
 
 }
 

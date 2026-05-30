@@ -1,6 +1,6 @@
-import ActionButton from "./ActionButton.jsx";
-import StatBar from './StatBar.jsx';
-import TimerStats from './TimerStats.jsx';
+import ActionButton from "./ActionButton.jsx"
+import StatBar from './StatBar.jsx'
+import TimerStats from './TimerStats.jsx'
 
 
 function StatRow({icon, value, duration, onDecrease, onIncrease}) {
@@ -11,11 +11,11 @@ function StatRow({icon, value, duration, onDecrease, onIncrease}) {
 
             <img src={icon} alt="" className="stat-icon"/>
 
-            <TimerStats duration={duration} onFinished={onDecrease} />
+            <TimerStats duration={duration} onFinished={onDecrease}/>
 
             <StatBar value={value} />
 
-            <ActionButton action={onIncrease} />
+            <ActionButton action={onIncrease}/>
 
         </div>
 

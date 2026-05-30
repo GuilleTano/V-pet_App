@@ -1,8 +1,8 @@
-function Pip({ color, active }) {
+function Pip({ className, active }) {
 
     return (
         <div
-            className={`pip ${color} ${active ? "active" : ""}`}
+            className={`${className} ${active ? "active" : ""}`}
         />
     );
 

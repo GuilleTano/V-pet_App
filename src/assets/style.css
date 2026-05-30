@@ -166,7 +166,7 @@ main::before {
     image-rendering: pixelated;
 }
 
-.screen-meter {
+.screen-bar {
 
     display: flex;
 
@@ -322,14 +322,6 @@ main::before {
 
 .pip.green.active {
     background: #49b549;
-}
-
-.pip.yellow.active {
-    background: #d8c44b;
-}
-
-.pip.red.active {
-    background: #c84c4c;
 }
 
 .pip:not(.active) {
